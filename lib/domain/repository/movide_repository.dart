@@ -1,4 +1,4 @@
 
 abstract class MovieRepository{
-  Future<void> getAllMovie(int page);
+  // Future<> getAllMovie(int page);
 }
