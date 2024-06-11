@@ -17,13 +17,13 @@ class MovieModel extends Movie{
 }
 
 getPosterUrl(json){
-
+  return json;
 }
 
 getBackdropUrl(json){
-
+  return json;
 }
 
 getDate(json){
-
+  return json;
 }
