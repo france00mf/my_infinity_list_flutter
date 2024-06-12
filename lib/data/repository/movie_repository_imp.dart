@@ -14,16 +14,17 @@ class MoviesRepositoryImpl implements MovieRepository{
   
   @override
   Future<Either<Failure, List<MovieModel>>> getAllMovie(int page) async{
-      // await _baseMoviesRemoteDataSource.getAllPopularMovies(page);
+      await _baseMoviesRemoteDataSource.getAllPopularMovies(page);
     try {
-      
+      final result= await _baseMoviesRemoteDataSource.getAllPopularMovies(page);
+      return Right(result);
     }on ServerException catch (e) {
-        throw '';
+        throw Left(ServerFailure(e.errorMessageModel.statusMessage));
     } on DioError catch(failure){
-      throw '';
+      throw Left(ServerFailure(failure.message!));
     }
     
-    throw UnimplementedError();
+
 
   }
 }
