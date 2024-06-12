@@ -16,10 +16,10 @@ class MovieModel extends Movie{
         );
 }
 
-var moviePlaceHolder;
+var moviePlaceHolder="https://davidkoepp.com/wp-content/themes/blankslate/images/Movie%20Placeholder.jpg";
 
 getPosterUrl(path){
-  var basePosterUrl;
+  var basePosterUrl="https://image.tmdb.org/t/p/w500";
   if (path != null) {
     return basePosterUrl + path;
   } else {
@@ -28,7 +28,7 @@ getPosterUrl(path){
 }
 
 getBackdropUrl(path){
-  var baseBackdropUrl;
+  var baseBackdropUrl="https://image.tmdb.org/t/p/w1280";
     if (path != null) {
     return baseBackdropUrl + path;
   } else {
