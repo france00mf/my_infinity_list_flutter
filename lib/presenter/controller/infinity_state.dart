@@ -1,7 +1,12 @@
 
 
 
-class InfinityState{
-  
+import 'package:equatable/equatable.dart';
+
+class InfinityState extends Equatable{
+  @override
+  // TODO: implement props
+  List<Object?> get props => throw UnimplementedError();
+
 }
 
