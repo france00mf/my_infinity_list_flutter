@@ -9,7 +9,9 @@ abstract class InfinityEvent extends Equatable {
 
 
 
-class GetInfinityEvent implements InfinityEvent{
+class GetInfinityEvent extends InfinityEvent{}
 
-}
+class FetchMoreGetInfinityEvent extends InfinityEvent{}
+
+
 
