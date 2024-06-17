@@ -4,6 +4,7 @@ import 'package:my_infinity_list_flutter/locator/locator.dart';
 import 'package:my_infinity_list_flutter/presenter/controller/infinity_bloc.dart';
 import 'package:my_infinity_list_flutter/presenter/controller/infinity_event.dart';
 import 'package:my_infinity_list_flutter/presenter/controller/infinity_state.dart';
+import 'package:my_infinity_list_flutter/utils/enums.dart';
 
 class InfinityView extends StatefulWidget {
   const InfinityView({super.key});
@@ -21,7 +22,16 @@ class _InfinityViewState extends State<InfinityView> {
       body: BlocBuilder<InfinityBloc, InfinityState>(
         
         builder: (context,state){
-          // return 
+          return switch(state.status){
+
+            case GetAllRequestStatus.loading:
+              return LoadingIndicator()
+            case GetAllRequestStatus.loaded:
+             return Container()
+            case GetAllRequestStatus.error:
+              return Container()
+          
+          };
       }),
       ),
     );
