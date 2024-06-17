@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_infinity_list_flutter/locator/locator.dart';
+import 'package:my_infinity_list_flutter/presenter/components/loading_indicator.dart';
 import 'package:my_infinity_list_flutter/presenter/controller/infinity_bloc.dart';
 import 'package:my_infinity_list_flutter/presenter/controller/infinity_event.dart';
 import 'package:my_infinity_list_flutter/presenter/controller/infinity_state.dart';
