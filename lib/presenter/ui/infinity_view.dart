@@ -24,7 +24,6 @@ class _InfinityViewState extends State<InfinityView> {
         
         builder: (context,state){
           return switch(state.status){
-
             case GetAllRequestStatus.loading:
               return LoadingIndicator()
             case GetAllRequestStatus.loaded:
@@ -33,7 +32,7 @@ class _InfinityViewState extends State<InfinityView> {
               return Container()
           
           };
-      }),
+      }), 
       ),
     );
   }
