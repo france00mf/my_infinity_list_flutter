@@ -23,13 +23,13 @@ class _InfinityViewState extends State<InfinityView> {
       body: BlocBuilder<InfinityBloc, InfinityState>(
         
         builder: (context,state){
-          return switch(state.status){
+           switch(state.status){
             case GetAllRequestStatus.loading:
-              return LoadingIndicator()
+              return LoadingIndicator();
             case GetAllRequestStatus.loaded:
-             return Container()
+             return Container();
             case GetAllRequestStatus.error:
-              return Container()
+              return Container();
           
           };
       }), 

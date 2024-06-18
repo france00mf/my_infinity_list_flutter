@@ -30,7 +30,12 @@ class InfinityBloc extends Bloc<InfinityEvent,InfinityState>{
 
   Future<void> _getMovies(Emitter<InfinityState> emit) async{
     final result = await _baseMovieUseCase(page);
-    result.fold((l) => null, (r) {
+    result.fold((l) => 
+    emit(
+      state.copyWith(
+        status: GetAllRequestStatus.error
+      )
+    ), (r) {
       page++;
       return emit(
          state.copyWith(
