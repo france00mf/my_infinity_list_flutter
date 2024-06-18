@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_infinity_list_flutter/domain/entities/movies.dart';
 import 'package:my_infinity_list_flutter/locator/locator.dart';
 import 'package:my_infinity_list_flutter/presenter/components/loading_indicator.dart';
+import 'package:my_infinity_list_flutter/presenter/components/vertical_listview.dart';
+import 'package:my_infinity_list_flutter/presenter/components/vertical_listview_card.dart';
 import 'package:my_infinity_list_flutter/presenter/controller/infinity_bloc.dart';
 import 'package:my_infinity_list_flutter/presenter/controller/infinity_event.dart';
 import 'package:my_infinity_list_flutter/presenter/controller/infinity_state.dart';
@@ -58,7 +60,7 @@ class PopularMoviesWidget extends StatelessWidget {
             if (index < movies.length) {
               return VerticalListViewCard(media: movies[index]);
             } else {
-              return const LoadingIndicator();
+              return  LoadingIndicator();
             }
           },
           addEvent: () {
