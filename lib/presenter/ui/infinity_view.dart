@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_infinity_list_flutter/domain/entities/movies.dart';
 import 'package:my_infinity_list_flutter/locator/locator.dart';
 import 'package:my_infinity_list_flutter/presenter/components/loading_indicator.dart';
 import 'package:my_infinity_list_flutter/presenter/controller/infinity_bloc.dart';
@@ -31,9 +32,43 @@ class _InfinityViewState extends State<InfinityView> {
             case GetAllRequestStatus.error:
               return Container();
           
-          };
+          }
       }), 
       ),
     );
   }
 }
+
+
+class PopularMoviesWidget extends StatelessWidget {
+  const PopularMoviesWidget({
+    required this.movies,
+    super.key,
+  });
+
+  final List<Movie> movies;
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<InfinityBloc, InfinityState>(
+      builder: (context, state) {
+        return VerticalListView(
+          itemCount: movies.length + 1,
+          itemBuilder: (context, index) {
+            if (index < movies.length) {
+              return VerticalListViewCard(media: movies[index]);
+            } else {
+              return const LoadingIndicator();
+            }
+          },
+          addEvent: () {
+            context
+                .read<InfinityBloc>()
+                .add(FetchMoreGetInfinityEvent());
+          },
+        );
+      },
+    );
+  }
+}
+
